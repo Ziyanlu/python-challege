@@ -39,3 +39,20 @@ for name in candidates:
 
 print("---------------------------")
 print(f'{"Winner: "}{winner}')
+
+f= open("txtfile.txt","w")
+print("Election Results")
+print("---------------------------")
+print(f"Total Votes: {len(rows)}")
+print(f"Candidte list : {candidates}")
+print("---------------------------")
+vote= -100
+for name in candidates:  
+    if data[name] > vote:
+        vote = data[name]
+        winner = name
+    print(f'{name} {":%.2f%%"%(data[name]/len(rows)*100)} {"("}{str(data[name])}{")"}')    
+
+print("---------------------------")
+print(f'{"Winner: "}{winner}')
+f.close()
